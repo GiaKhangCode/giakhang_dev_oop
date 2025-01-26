@@ -2,6 +2,7 @@
 
 using namespace std;
 
+// Định nghĩa Class CSoPhuc
 class CSoPhuc
 {
     private:
@@ -43,6 +44,7 @@ int main()
     return 0;
 }
 
+// Nạp chồng toán tử nhập >>
 istream& operator >> (istream &is, CSoPhuc &X)
 {
     cout << "Nhap phan thuc: ";
@@ -54,6 +56,7 @@ istream& operator >> (istream &is, CSoPhuc &X)
     return is;
 }
 
+// Nạp chồng toán tử xuất >>
 ostream& operator << (ostream &os, CSoPhuc X)
 {
     if (X.a != 0 )
@@ -68,6 +71,7 @@ ostream& operator << (ostream &os, CSoPhuc X)
     return os;
 }
 
+// Nạp chồng toán tử cộng +
 CSoPhuc CSoPhuc::operator+(CSoPhuc another)
 {
     CSoPhuc kq;
@@ -77,7 +81,7 @@ CSoPhuc CSoPhuc::operator+(CSoPhuc another)
     return kq;
 }
 
-
+// Nạp chồng toán tử trừ -
 CSoPhuc CSoPhuc::operator - (CSoPhuc another)
 {
     CSoPhuc kq;
@@ -87,6 +91,7 @@ CSoPhuc CSoPhuc::operator - (CSoPhuc another)
     return kq;
 }
 
+// Nạp chồng toán tử nhân *
 CSoPhuc CSoPhuc::operator * (CSoPhuc another)
 {
     CSoPhuc kq;
@@ -96,6 +101,7 @@ CSoPhuc CSoPhuc::operator * (CSoPhuc another)
     return kq;
 }
 
+// Nạp chồng toán tử chia /
 CSoPhuc CSoPhuc::operator / (CSoPhuc another)
 {
     CSoPhuc kq;
