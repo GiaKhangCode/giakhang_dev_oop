@@ -59,7 +59,7 @@ void outputTime(Time t)
     OutputElement(t.second);
 }
 
-// Hàm kiểm tra thời gian
+// 6. Hàm kiểm tra thời gian
 bool checkTime(Time t)
 {
     if (t.hour < 0 || t.hour > 23 || t.minute < 0 || t.minute > 59 || t.second < 0 || t.second > 59)
@@ -70,7 +70,7 @@ bool checkTime(Time t)
     return 1;
 }
 
-// . Hàm xuất kết quả
+// 7. Hàm xuất kết quả
 void Output(Time t1, Time t2)
 {
     outputTime(t1);
