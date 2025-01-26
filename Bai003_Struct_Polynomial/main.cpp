@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -57,6 +58,8 @@ void NhapDaThuc(DaThuc &F)
         cin >> F.p[i].heso >> F.p[i].somu;
 
     RutGon(F);
+
+    cout << "===============================================\n\n";
 }
 
 // 5. Hàm xuất một đa thức
@@ -254,39 +257,52 @@ DaThuc nhanDaThuc(DaThuc dt1, DaThuc dt2)
 }
 
 
+// 10. Hàm tính giá trị F(x)
+long long tinhGiaTriFx(DaThuc F, int x)
+{
+    int res = 0;
+    for (int i=0; i< F.n; i++)
+        res += F.p[i].heso*pow(x, F.p[i].somu);
+
+    return res;
+
+}
 int main()
 {
     DaThuc F, G;
-    cout << "\tNHAP DA THUC THU NHAT\n";
+    cout << "\tNHAP F(X)\n";
     NhapDaThuc(F);
 
-    cout << "\n\tNHAP DA THUC THU HAI\n";
+    cout << "\tNHAP G(X)\n";
     NhapDaThuc(G);
 
-    cout << "-------------------------------\n";
 
-    cout << "Da thuc thu nhat: ";
+    cout << "F(x) = ";
     XuatDaThuc(F);
 
-    cout << "Da thuc thu hai: ";
+    cout << "G(x) = ";
     XuatDaThuc(G);
 
     DaThuc H;
     H = congDaThuc(F, G);
-    cout << "\nDa thuc tong: ";
+    cout << "\nF(x) + G(x) = ";
     XuatDaThuc(H);
 
     DaThuc K;
     K = truDaThuc(F, G);
-    cout << "Da thuc hieu: ";
+    cout << "F(x) - G(x) = ";
     XuatDaThuc(K);
 
 
     DaThuc L;
     L = nhanDaThuc(F, G);
-    cout << "Da thuc tich: ";
+    cout << "F(x).G(x) = ";
     XuatDaThuc(L);
 
+    int x;
+    cout << "\n\tNHAP SO NGUYEN X DE TINH GIA TRI F(X): ";
+    cin >> x;
+    cout << "F("<<x<<") = " << tinhGiaTriFx(F, x);
 
     return 0;
 }
