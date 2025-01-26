@@ -54,6 +54,7 @@ Date getFutureDate(Date current, int x)
     return future;
 }
 
+// 5. Hàm nhập vào ngày tháng năm
 void InputDate(Date &today)
 {
     cout << "Nhap ngay (dd mm yyyy): ";
@@ -61,6 +62,7 @@ void InputDate(Date &today)
 
 }
 
+// 6. Hàm kiểm tra tính hợp lệ của ngày
 bool checkDate(Date today)
 {
     if (today.day < 1 || today.day > daysInMonth(today.month, today.year) || today.month < 1 || today.month > 12)
@@ -71,10 +73,12 @@ bool checkDate(Date today)
     return 0;
 }
 
+// 7. Hàm xuất ngày tháng năm
 void OutputDate(Date nextDay)
 {
-    cout << "Ngay tiep theo la: " << nextDay.day << "/" << nextDay.month << "/" << nextDay.year << endl;
+    cout << nextDay.day << "/" << nextDay.month << "/" << nextDay.year << endl;
 }
+
 int main()
 {
     Date today;
@@ -87,6 +91,11 @@ int main()
     cin >> x;
 
     Date futureDay = getFutureDate(today, x);
+
+    cout << "Ngay hien tai: ";
+    OutputDate(today);
+
+    cout << "Sau khi cong them " << x << " ngay: ";
     OutputDate(futureDay);
 
     return 0;
