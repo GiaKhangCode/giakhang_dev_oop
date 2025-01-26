@@ -6,7 +6,7 @@ using namespace std;
 class CSoPhuc
 {
     private:
-        float a; // phàn thực
+        float a; // phần thực
         float b; // phần ảo
     
     public:
