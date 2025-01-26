@@ -6,8 +6,8 @@ using namespace std;
 class CSoPhuc
 {
     private:
-        float a;
-        float b;
+        float a; // phàn thực
+        float b; // phần ảo
     
     public:
         friend istream& operator >> (istream&, CSoPhuc&);
