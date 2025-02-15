@@ -1,17 +1,20 @@
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
-// Định nghĩa Class CSoPhuc
+int i = 1;
+
 class CSoPhuc
 {
     private:
-        float a; // phần thực
-        float b; // phần ảo
+        float a;
+        float b;
     
     public:
         friend istream& operator >> (istream&, CSoPhuc&);
         friend ostream& operator << (ostream&, CSoPhuc);
+        float mod();
         CSoPhuc operator + (CSoPhuc);
         CSoPhuc operator - (CSoPhuc);
         CSoPhuc operator * (CSoPhuc);
@@ -23,40 +26,40 @@ int main()
     // Khai báo và nhập xuất số phức
     CSoPhuc x, y;
     cin >> x >> y;
+    cout << "======================================\n\n";
     cout << "Ban vua nhap hai so phuc: " << x << " va " << y << endl;
+    // Xuất module hai số phức
+    cout << "Module so phuc thu nhat: " << x.mod() << endl;
+    cout << "Module so phuc thu hai: " << y.mod() << endl;
 
     // Xuất tổng hai số phức
-    CSoPhuc Add = x + y;
-    cout << "Tong hai so phuc la: " << Add << endl;
+    cout << "Tong hai so phuc la: " << x + y << endl;
 
     //Xuất hiệu hai số phức
     CSoPhuc Sub = x - y;
-    cout << "Hieu hai so phuc la: " << Sub << endl;
+    cout << "Hieu hai so phuc la: " << x - y << endl;
 
     //Xuất tích hai số phức
-    CSoPhuc Multi = x * y;
-    cout << "Tich hai so phuc la: " << Multi << endl;
+    cout << "Tich hai so phuc la: " << x * y << endl;
 
     // Xuất thương hai số phức
-    CSoPhuc Div = x/y;
-    cout << "Thuong hai so phuc la: " << Div << endl;
+    cout << "Thuong hai so phuc la: " << x / y << endl;
 
     return 0;
 }
 
-// Nạp chồng toán tử nhập >>
 istream& operator >> (istream &is, CSoPhuc &X)
 {
-    cout << "Nhap phan thuc: ";
+    cout << "Nhap phan thuc cua so phuc thu " << i << ": "; 
     is >> X.a;
 
-    cout << "Nhap phan ao: ";
+    cout << "Nhap phan ao cua so phuc thu " << i << ": ";
     is >> X.b;
 
+    i++;
     return is;
 }
 
-// Nạp chồng toán tử xuất >>
 ostream& operator << (ostream &os, CSoPhuc X)
 {
     if (X.a != 0 )
@@ -71,7 +74,11 @@ ostream& operator << (ostream &os, CSoPhuc X)
     return os;
 }
 
-// Nạp chồng toán tử cộng +
+float CSoPhuc::mod()
+{
+    return sqrt(a*a + b*b);
+}
+
 CSoPhuc CSoPhuc::operator+(CSoPhuc another)
 {
     CSoPhuc kq;
@@ -81,7 +88,7 @@ CSoPhuc CSoPhuc::operator+(CSoPhuc another)
     return kq;
 }
 
-// Nạp chồng toán tử trừ -
+
 CSoPhuc CSoPhuc::operator - (CSoPhuc another)
 {
     CSoPhuc kq;
@@ -91,7 +98,6 @@ CSoPhuc CSoPhuc::operator - (CSoPhuc another)
     return kq;
 }
 
-// Nạp chồng toán tử nhân *
 CSoPhuc CSoPhuc::operator * (CSoPhuc another)
 {
     CSoPhuc kq;
@@ -101,7 +107,6 @@ CSoPhuc CSoPhuc::operator * (CSoPhuc another)
     return kq;
 }
 
-// Nạp chồng toán tử chia /
 CSoPhuc CSoPhuc::operator / (CSoPhuc another)
 {
     CSoPhuc kq;
