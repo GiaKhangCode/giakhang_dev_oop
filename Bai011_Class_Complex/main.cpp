@@ -2,6 +2,7 @@
 
 int main()
 {
+    // MUỐN NHẬP SỐ PHỨC THÌ CIN >> <SỐ PHỨC>
     Complex c1;
     Complex c2(3);
     Complex c3(0,4);
