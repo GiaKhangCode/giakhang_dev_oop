@@ -1,0 +1,43 @@
+# depslib dependency file v1.0
+1740757079 source:e:\study_progaming\electronics_store\src\product.cpp
+	"Product.h"
+
+1740757079 e:\study_progaming\electronics_store\include\product.h
+	<iostream>
+	<string>
+
+1740757517 source:e:\study_progaming\electronics_store\src\smartphone.cpp
+	"SmartPhone.h"
+
+1740751443 e:\study_progaming\electronics_store\include\smartphone.h
+	"Product.h"
+
+1740757315 source:e:\study_progaming\electronics_store\main.cpp
+	"Product.h"
+	"SmartPhone.h"
+	"Laptop.h"
+	"Tablet.h"
+	"Store.h"
+
+1740752270 e:\study_progaming\electronics_store\include\laptop.h
+	"Product.h"
+
+1740757517 source:e:\study_progaming\electronics_store\src\laptop.cpp
+	"Laptop.h"
+
+1740757517 source:e:\study_progaming\electronics_store\src\tablet.cpp
+	"Tablet.h"
+
+1740752812 e:\study_progaming\electronics_store\include\tablet.h
+	"Product.h"
+
+1740757315 source:e:\study_progaming\electronics_store\src\store.cpp
+	"Store.h"
+
+1740757233 e:\study_progaming\electronics_store\include\store.h
+	"Product.h"
+	"SmartPhone.h"
+	"Laptop.h"
+	"Tablet.h"
+	<vector>
+
