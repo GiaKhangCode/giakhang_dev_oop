@@ -21,6 +21,7 @@ int main()
         if (List[i].getAverage() > max->getAverage())
             max = &List[i];
     }
+    cout << "\n===STUDENT HAS MAX SCORE===\n";
     max->displayInfo();
     return 0;
 }
