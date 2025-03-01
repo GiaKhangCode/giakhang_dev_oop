@@ -1,20 +1,8 @@
 #include "Student.h"
 #include <vector>
 
-int main()
+void findTheBestStudent(vector<Student> List, int n)
 {
-    cout << "Enter number of student: ";
-    int n;
-    cin >> n;
-    cin.ignore();
-    vector<Student> List(n);
-    for (int i=0; i<n; i++)
-        List[i].inputInfo();
-    for (int i=0; i<n; i++)
-        List[i].calculateAverage();
-    cout << "\n===LIST OF STUDENTS===\n";
-    for (int i=0; i<n; i++)
-        List[i].displayInfo();
     Student* max = &List[0];
     for (int i=1; i<n; i++)
     {
@@ -23,5 +11,31 @@ int main()
     }
     cout << "\n===STUDENT HAS MAX SCORE===\n";
     max->displayInfo();
+}
+
+int main()
+{
+    cout << "Enter number of student: ";
+    int n;
+    cin >> n;
+    cin.ignore();
+
+    // Tạo danh sách sinh viên
+    vector<Student> List(n);
+    for (int i=0; i<n; i++)
+    {
+        cout << "Enter infomation of student number " << i+1 << endl;
+        List[i].inputInfo();
+    }
+    for (int i=0; i<n; i++)
+        List[i].calculateAverage();
+
+    // In danh sách sinh viên
+    cout << "\n===LIST OF STUDENTS===\n";
+    for (int i=0; i<n; i++)
+        List[i].displayInfo();
+
+    // Tìm sinh viên có điểm cao nhất
+    findTheBestStudent(List, n);
     return 0;
 }
